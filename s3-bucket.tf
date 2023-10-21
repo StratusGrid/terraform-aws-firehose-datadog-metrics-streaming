@@ -3,11 +3,6 @@ resource "aws_s3_bucket" "datadog_aws_bucket" {
   bucket = var.name
 }
 
-resource "aws_s3_bucket_acl" "failed_data_bucket_acl" {
-  bucket = aws_s3_bucket.datadog_aws_bucket.id
-  acl    = "private"
-}
-
 resource "aws_s3_bucket_server_side_encryption_configuration" "failed_data_bucket_encryption" {
   bucket = aws_s3_bucket.datadog_aws_bucket.bucket
 
