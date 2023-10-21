@@ -75,7 +75,7 @@ EOF
 }
 
 resource "aws_iam_role" "metric_stream_to_firehose" {
-  name               = "${var.name}-cloudwatch-to-firehose"
+  name               = "${var.name}"
   tags               = local.tags
   assume_role_policy = <<EOF
 {
@@ -95,7 +95,7 @@ EOF
 }
 
 resource "aws_iam_role_policy" "metric_stream_to_firehose" {
-  name = "${var.name}-cloudwatch-to-firehose"
+  name = "${var.name}-cw-to-firehose"
   role = aws_iam_role.metric_stream_to_firehose.id
 
   policy = <<EOF
