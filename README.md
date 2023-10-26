@@ -1,7 +1,7 @@
 <!-- BEGIN_TF_DOCS -->
-# template-terraform-module-starter
+# terraform-aws-datadog-metrics-streaming
 
-GitHub: [StratusGrid/template-terraform-module-starter](https://github.com/StratusGrid/template-terraform-module-starter)
+GitHub: [StratusGrid/terraform-aws-datadog-metrics-streaming](https://github.com/StratusGrid/terraform-aws-datadog-metrics-streaming)
 
 This Repo is meant to act as a template which can be used
 when creating new modules.
@@ -160,7 +160,7 @@ data "aws_secretsmanager_secret_version" "datadog_secret" {
 module "datadog_integration" {
   # source                               = "github.com/StratusGrid/terraform-aws-datadog-integration-streaming"
   source            = "StratusGrid/datadog-integration-streaming/aws"
-  version           = "1.0.0"
+  version           = "1.0.1"
   name              = "${var.name_prefix}-integration-${data.aws_caller_identity.current.account_id}${local.name_suffix}"
   input_tags        = local.common_tags
   datadog_api_key   = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -176,7 +176,7 @@ module "datadog_integration" {
 module "datadog_integration_us_east_1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-us-east-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -189,7 +189,7 @@ module "datadog_integration_us_east_1" {
 module "datadog_integration_us_west_2" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-us-west-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -202,7 +202,7 @@ module "datadog_integration_us_west_2" {
 module "datadog_integration_ca_central_1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ca-central-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -215,7 +215,7 @@ module "datadog_integration_ca_central_1" {
 module "datadog_integration_sa-east-1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-sa-east-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -228,7 +228,7 @@ module "datadog_integration_sa-east-1" {
 module "datadog_integration_eu_west_2" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-eu-west-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -241,7 +241,7 @@ module "datadog_integration_eu_west_2" {
 module "datadog_integration_eu_central_1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-eu-central-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -254,7 +254,7 @@ module "datadog_integration_eu_central_1" {
 module "datadog_integration_ap_southeast_1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-southeast-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -267,7 +267,7 @@ module "datadog_integration_ap_southeast_1" {
 module "datadog_integration_ap_southeast_2" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-southeast-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -280,7 +280,7 @@ module "datadog_integration_ap_southeast_2" {
 module "datadog_integration_ap_northeast_1" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-northeast-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -293,7 +293,7 @@ module "datadog_integration_ap_northeast_1" {
 module "datadog_integration_ap_northeast_2" {
   # source                               = "github.com/StratusGrid/terraform-aws-firehose-datadog-metrics-streaming"
   source                               = "StratusGrid/firehose-datadog-metrics-streaming/aws"
-  version                              = "1.0.0"
+  version                              = "1.0.1"
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-northeast-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
@@ -303,125 +303,6 @@ module "datadog_integration_ap_northeast_2" {
   }
 }
 ```
-
-## StratusGrid Standards we assume
-
-- This repo is designed to be built upon the [StratusGrid Account Starter Template](https://github.com/StratusGrid/terraform-account-starter), this base template configures the remote backend and SOPS baseline requirements.
-- All resource names and name tags shall use `_` and not `-`s
-- The old naming standard for common files such as inputs, outputs, providers, etc was to prefix them with a `-`, this is no longer true as it's not POSIX compliant. Our pre-commit hooks will fail with this old standard.
-- StratusGrid generally follows the TerraForm standards outlined [here](https://www.terraform-best-practices.com/naming)
-
-## Repo Knowledge
-
-This repo has several base requirements
-
-- This repo is based upon the AWS `~> 4.9.0` provider
-- The following packages are installed via brew: `tflint`, `terrascan`, `terraform-docs`, `gitleaks`, `tfsec`, `pre-commit`, `sops`, `go`
-- Install `bash` through Brew for Bash 5.0, otherwise it will fail with the error that looks like `declare: -g: invalid option`
-- If you need more tflint plugins, please edit the `.tflint.hcl` file with the instructions from [here](https://github.com/terraform-linters/tflint)
-- It's highly recommend that you follow the Git Pre-Commit Instructions below, these will run in GitHub though they should be ran locally to reduce issues
-- By default Terraform docs will always run so our auto generated docs are always up to date
-- This repo has been tested with [awsume](https://stratusgrid.atlassian.net/wiki/spaces/TK/pages/1564966913/Awsume)
-- The Terraform module standard is to place everything in the `main.tf` file, and this works well for small modules. Though StratusGrid suggests breaking it out into multiple files if the module is larger or touches many resources such as data blocks.
-- StratusGrid requires the tag logic be used and every resource within the module be tagged with `local.tags`
-
-### TFSec
-
-See the pre-commit tfsec documentation [here](https://github.com/antonbabenko/pre-commit-terraform#terraform_tfsec), this includes on how to bypass warnings
-
-## Apply this template via Terraform
-
-### Before this is applied, you need to configure the git hook on your local machine
-
-```bash
-#Verify you have bash5
-brew install bash
-
-# Test your pre-commit hooks - This will force them to run on all files
-pre-commit run --all-files
-
-# Add your pre-commit hooks forever
-pre-commit install
-```
-
-### Template Documentation
-
-A sample template Git Repo with how we should setup client infrastructure, in this case it's shared infrastructure.
-More details are available [here](https://stratusgrid.atlassian.net/wiki/spaces/MS/pages/2065694728/MSP+Client+Setup+-+Procedure) in confluence.
-
-## Documentation
-
-This repo is self documenting via Terraform Docs, please see the note at the bottom.
-
-### `LICENSE`
-
-This is the standard Apache 2.0 License as defined [here](https://stratusgrid.atlassian.net/wiki/spaces/TK/pages/2121728017/StratusGrid+Terraform+Module+Requirements).
-
-### `outputs.tf`
-
-The StratusGrid standard for Terraform Outputs.
-
-### `README.md`
-
-It's this file! I'm always updated via TF Docs!
-
-### `tags.tf`
-
-The StratusGrid standard for provider/module level tagging. This file contains logic to always merge the repo URL.
-
-### `variables.tf`
-
-All variables related to this repo for all facets.
-One day this should be broken up into each file, maybe maybe not.
-
-### `versions.tf`
-
-This file contains the required providers and their versions. Providers need to be specified otherwise provider overrides can not be done.
-
-## Documentation of Misc Config Files
-
-This section is supposed to outline what the misc configuration files do and what is there purpose
-
-### `.config/.terraform-docs.yml`
-
-This file auto generates your `README.md` file.
-
-### `.config/terrascan.yaml`
-
-This file has all of the configuration options required for Terrascan, this is where you would skip rules to.
-
-### `.github/sync-repo-settings.yaml`
-
-This file is our standard for how GitHub branch protection rules should be setup.
-
-### `.github/workflows/pre-commit.yml`
-
-This file contains the instructions for Github workflows, in specific this file run pre-commit and will allow the PR to pass or fail. This is a safety check and extras for if pre-commit isn't run locally.
-
-### `.vscode/settings.json`
-
-This file is a vscode workspace settings file.
-
-### `examples/*`
-
-The files in here are used by `.config/terraform-docs.yml` for generating the `README.md`. All files must end in `.tfnot` so Terraform validate doesn't trip on them since they're purely example files.
-
-### `.gitignore`
-
-This is your gitignore, and contains a slew of default standards.
-
-### `.pre-commit-config.yaml`
-
-This file is the GIT pre-commit file and contains all of it's configuration options
-
-### `.prettierignore`
-
-This file is the ignore file for the prettier pre-commit actions. Specific files like our SOPS config files have to be ignored.
-
-### `.tflint.hcl`
-
-This file contains the plugin data for TFLint to run.
-
 ---
 
 ## Requirements
