@@ -9,14 +9,6 @@ content: |-
 
   GitHub: [StratusGrid/terraform-aws-datadog-metrics-streaming](https://github.com/StratusGrid/terraform-aws-datadog-metrics-streaming)
 
-  This Repo is meant to act as a template which can be used
-  when creating new modules.
-
-  <span style="color:red">**Notes:</span>
-  - Don't forget to change the module source repo tag in `tags.tf`!
-  - Please remove all of the unnecessary initial documentation from the `.terraform-docs.yml` file as they exist purely to make the module and not for continual publishing.
-  - Update the examples and include the Terraform registry information and proper version constraint. A version constraint would generally look like this `~> 1.0`
-
   ## Example
   
   Multi-region Example utilizing both the integration module to make the account level integration in DataDog and the metrics streaming module to create the firehose and metrics stream in each region.
