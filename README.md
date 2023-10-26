@@ -180,8 +180,6 @@ module "datadog_integration_us_east_1" {
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-us-east-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
-  datadog_app_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_app_key"]
-  datadog_api_url                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_url"]
   datadog_firehose_delivery_stream_url = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_firehose_delivery_stream_url"]
   providers = {
     aws = aws.us-east-1
@@ -195,8 +193,6 @@ module "datadog_integration_us_west_2" {
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-us-west-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
-  datadog_app_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_app_key"]
-  datadog_api_url                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_url"]
   datadog_firehose_delivery_stream_url = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_firehose_delivery_stream_url"]
   providers = {
     aws = aws.us-west-2
@@ -210,8 +206,6 @@ module "datadog_integration_ca_central_1" {
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ca-central-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
-  datadog_app_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_app_key"]
-  datadog_api_url                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_url"]
   datadog_firehose_delivery_stream_url = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_firehose_delivery_stream_url"]
   providers = {
     aws = aws.ca-central-1
@@ -225,8 +219,6 @@ module "datadog_integration_sa-east-1" {
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-sa-east-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
-  datadog_app_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_app_key"]
-  datadog_api_url                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_url"]
   datadog_firehose_delivery_stream_url = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_firehose_delivery_stream_url"]
   providers = {
     aws = aws.sa-east-1
@@ -240,8 +232,6 @@ module "datadog_integration_eu_west_2" {
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-eu-west-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
-  datadog_app_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_app_key"]
-  datadog_api_url                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_url"]
   datadog_firehose_delivery_stream_url = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_firehose_delivery_stream_url"]
   providers = {
     aws = aws.eu-west-2
@@ -255,8 +245,6 @@ module "datadog_integration_eu_central_1" {
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-eu-central-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
-  datadog_app_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_app_key"]
-  datadog_api_url                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_url"]
   datadog_firehose_delivery_stream_url = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_firehose_delivery_stream_url"]
   providers = {
     aws = aws.eu-central-1
@@ -270,8 +258,6 @@ module "datadog_integration_ap_southeast_1" {
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-southeast-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
-  datadog_app_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_app_key"]
-  datadog_api_url                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_url"]
   datadog_firehose_delivery_stream_url = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_firehose_delivery_stream_url"]
   providers = {
     aws = aws.ap-southeast-1
@@ -285,8 +271,6 @@ module "datadog_integration_ap_southeast_2" {
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-southeast-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
-  datadog_app_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_app_key"]
-  datadog_api_url                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_url"]
   datadog_firehose_delivery_stream_url = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_firehose_delivery_stream_url"]
   providers = {
     aws = aws.ap-southeast-2
@@ -300,8 +284,6 @@ module "datadog_integration_ap_northeast_1" {
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-northeast-1${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
-  datadog_app_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_app_key"]
-  datadog_api_url                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_url"]
   datadog_firehose_delivery_stream_url = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_firehose_delivery_stream_url"]
   providers = {
     aws = aws.ap-northeast-1
@@ -315,8 +297,6 @@ module "datadog_integration_ap_northeast_2" {
   name                                 = "${var.name_prefix}-metrics-${data.aws_caller_identity.current.account_id}-ap-northeast-2${local.name_suffix}"
   input_tags                           = local.common_tags
   datadog_api_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_key"]
-  datadog_app_key                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_app_key"]
-  datadog_api_url                      = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_api_url"]
   datadog_firehose_delivery_stream_url = jsondecode(data.aws_secretsmanager_secret_version.datadog_secret.secret_string)["datadog_firehose_delivery_stream_url"]
   providers = {
     aws = aws.ap-northeast-2
@@ -472,8 +452,6 @@ This file contains the plugin data for TFLint to run.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_datadog_api_key"></a> [datadog\_api\_key](#input\_datadog\_api\_key) | Datadog API Key | `string` | n/a | yes |
-| <a name="input_datadog_api_url"></a> [datadog\_api\_url](#input\_datadog\_api\_url) | Datadog API URL | `string` | n/a | yes |
-| <a name="input_datadog_app_key"></a> [datadog\_app\_key](#input\_datadog\_app\_key) | Datadog Application Key | `string` | n/a | yes |
 | <a name="input_datadog_firehose_delivery_stream_url"></a> [datadog\_firehose\_delivery\_stream\_url](#input\_datadog\_firehose\_delivery\_stream\_url) | Datadog URL for the Firehose Delivery stream to send metrics. Marked sensitive because the some endpoints requires a key in the url. | `string` | n/a | yes |
 | <a name="input_input_tags"></a> [input\_tags](#input\_input\_tags) | Map of tags to apply to resources | `map(string)` | <pre>{<br>  "Developer": "StratusGrid",<br>  "Provisioner": "Terraform"<br>}</pre> | no |
 | <a name="input_name"></a> [name](#input\_name) | name to prepend to all resource names within module. NOTE: For this DataDog firehose integration, it is recommended to use a format that includes the AWS Account number and region since it is account and region specific. | `string` | n/a | yes |
