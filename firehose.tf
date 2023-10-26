@@ -75,7 +75,7 @@ EOF
 }
 
 resource "aws_iam_role" "metric_stream_to_firehose" {
-  name               = "${var.name}"
+  name               = var.name
   tags               = local.tags
   assume_role_policy = <<EOF
 {
