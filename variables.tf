@@ -19,20 +19,8 @@ variable "datadog_api_key" {
   sensitive   = true
 }
 
-variable "datadog_app_key" {
-  type        = string
-  description = "Datadog Application Key"
-  sensitive   = true
-}
-
-variable "datadog_api_url" {
-  type        = string
-  description = "Datadog API URL"
-}
-
 variable "datadog_firehose_delivery_stream_url" {
   type        = string
   description = "Datadog URL for the Firehose Delivery stream to send metrics. Marked sensitive because the some endpoints requires a key in the url."
   sensitive   = true
 }
-
