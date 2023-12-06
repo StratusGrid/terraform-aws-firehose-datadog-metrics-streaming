@@ -12,6 +12,16 @@ variable "input_tags" {
   }
 }
 
+#CloudWatch Metrics Variables
+variable "cw_namespace_exclude_filters" {
+  type        = list(object({
+    metric_names = list(string),
+    namespace    = string
+  }))
+  description = "Pairings of Namespaces and Metrics which should be excluded from the CloudWatch Metrics Stream."
+  default     = null
+}
+
 #DataDog Variables
 variable "datadog_api_key" {
   type        = string
