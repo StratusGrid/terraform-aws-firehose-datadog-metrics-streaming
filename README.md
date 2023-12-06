@@ -328,6 +328,7 @@ module "datadog_integration_ap_northeast_2" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_cw_namespace_exclude_filters"></a> [cw\_namespace\_exclude\_filters](#input\_cw\_namespace\_exclude\_filters) | Pairings of Namespaces and Metrics which should be excluded from the CloudWatch Metrics Stream. | <pre>list(object({<br>    metric_names = list(string),<br>    namespace    = string<br>  }))</pre> | `null` | no |
 | <a name="input_datadog_api_key"></a> [datadog\_api\_key](#input\_datadog\_api\_key) | Datadog API Key | `string` | n/a | yes |
 | <a name="input_datadog_firehose_delivery_stream_url"></a> [datadog\_firehose\_delivery\_stream\_url](#input\_datadog\_firehose\_delivery\_stream\_url) | Datadog URL for the Firehose Delivery stream to send metrics. Marked sensitive because the some endpoints requires a key in the url. | `string` | n/a | yes |
 | <a name="input_input_tags"></a> [input\_tags](#input\_input\_tags) | Map of tags to apply to resources | `map(string)` | <pre>{<br>  "Developer": "StratusGrid",<br>  "Provisioner": "Terraform"<br>}</pre> | no |
