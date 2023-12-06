@@ -19,7 +19,7 @@ variable "cw_namespace_exclude_filters" {
     namespace    = string
   }))
   description = "Pairings of Namespaces and Metrics which should be excluded from the CloudWatch Metrics Stream."
-  default     = null
+  default     = []
 }
 
 #DataDog Variables
