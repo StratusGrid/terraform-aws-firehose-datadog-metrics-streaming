@@ -129,5 +129,5 @@ resource "aws_cloudwatch_metric_stream" "datadog_metric_stream" {
     }
   }
 
-  tags          = local.tags
+  tags = local.tags
 }
