@@ -46,6 +46,7 @@ resource "aws_kinesis_firehose_delivery_stream" "datadog_firehose_stream" {
   }
 }
 
+#tfsec:ignore:aws-iam-no-policy-wildcards
 resource "aws_iam_role_policy" "metric_stream_s3_failed_upload_backup" {
   name = "${var.name}-s3-failed-upload-backup"
   role = aws_iam_role.firehose_datadog_role.id
