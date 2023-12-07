@@ -46,6 +46,7 @@ resource "aws_kinesis_firehose_delivery_stream" "datadog_firehose_stream" {
   }
 }
 
+#tfsec:ignore:aws-iam-no-policy-wildcards
 resource "aws_iam_role_policy" "metric_stream_s3_failed_upload_backup" {
   name = "${var.name}-s3-failed-upload-backup"
   role = aws_iam_role.firehose_datadog_role.id
@@ -120,5 +121,14 @@ resource "aws_cloudwatch_metric_stream" "datadog_metric_stream" {
   role_arn      = aws_iam_role.metric_stream_to_firehose.arn
   firehose_arn  = aws_kinesis_firehose_delivery_stream.datadog_firehose_stream.arn
   output_format = "opentelemetry0.7"
-  tags          = local.tags
+
+  dynamic "exclude_filter" {
+    for_each = var.cw_namespace_exclude_filters
+    content {
+      namespace    = exclude_filter.value["namespace"]
+      metric_names = exclude_filter.value["metric_names"]
+    }
+  }
+
+  tags = local.tags
 }

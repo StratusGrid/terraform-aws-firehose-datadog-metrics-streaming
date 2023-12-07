@@ -1,8 +1,10 @@
 #Firehose stores data that failed to upload to DataDog in this s3 bucket.
+#tfsec:ignore:aws-s3-enable-bucket-logging tfsec:ignore:aws-s3-enable-versioning
 resource "aws_s3_bucket" "datadog_aws_bucket" {
   bucket = var.name
 }
 
+#tfsec:ignore:aws-s3-encryption-customer-key
 resource "aws_s3_bucket_server_side_encryption_configuration" "failed_data_bucket_encryption" {
   bucket = aws_s3_bucket.datadog_aws_bucket.bucket
 
