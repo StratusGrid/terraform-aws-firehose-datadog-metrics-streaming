@@ -1,3 +1,5 @@
+header-from: ./.config/header.md
+
 version: ""
 
 formatter: markdown table
@@ -5,6 +7,8 @@ formatter: markdown table
 name: terraform-aws-firehose-datadog-metrics-streaming
 
 content: |-
+  {{ .Header }}
+
   # terraform-aws-firehose-datadog-metrics-streaming
 
   GitHub: [StratusGrid/terraform-aws-datadog-metrics-streaming](https://github.com/StratusGrid/terraform-aws-datadog-metrics-streaming)
@@ -35,6 +39,7 @@ content: |-
 
 sections:
   show:
+    - header
     - requirements
     - resources
     - inputs
